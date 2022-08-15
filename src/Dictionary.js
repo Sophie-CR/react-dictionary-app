@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   const [searchTerm, setSearchTerm] = useState("");
+  let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`;
   function handleSearchTerm(event) {
     setSearchTerm(event.target.value);
   }
   function search(event) {
     event.preventDefault();
-    alert(`Searching for ${searchTerm}`);
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleResponse(response) {
+    console.log(response);
   }
   return (
     <div className="dictionary">
