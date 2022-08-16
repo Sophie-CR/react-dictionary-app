@@ -3,7 +3,6 @@ import "./Results.css";
 import Meaning from "./Meaning";
 
 export default function Results(props) {
-  console.log(props.data);
   if (props.data) {
     return (
       <div>
