@@ -2,7 +2,6 @@ import React from "react";
 import "./Results.css";
 import Phonetics from "./Phonetics";
 import Meaning from "./Meaning";
-import Synonyms from "./Synonyms";
 
 export default function Results(props) {
   if (props.data) {
@@ -18,13 +17,8 @@ export default function Results(props) {
         })}
         {props.data.meanings.map(function (meaning, index) {
           return (
-            <div>
-              <div key={index}>
-                <Meaning data={meaning} />
-              </div>
-              <div>
-                <Synonyms data={meaning} />
-              </div>
+            <div key={index}>
+              <Meaning data={meaning} />
             </div>
           );
         })}
