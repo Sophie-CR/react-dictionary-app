@@ -2,7 +2,6 @@ import React from "react";
 import "./Meaning.css";
 
 export default function Meaning(props) {
-  console.log(props.data);
   return (
     <div className="meaning">
       <h3>
