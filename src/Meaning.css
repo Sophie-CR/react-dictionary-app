@@ -1,3 +1,6 @@
+h3::first-letter {
+  text-transform: uppercase;
+}
 .definition {
   margin-bottom: 8px;
 }
