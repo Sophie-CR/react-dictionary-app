@@ -18,7 +18,7 @@ export default function Dictionary() {
     setResults(response.data[0]);
   }
   return (
-    <div className="dictionary">
+    <div className="dictionary mb-3">
       <h1>Dictionary</h1>
       <form onSubmit={search}>
         <input type="search" autoFocus={true} onChange={handleSearchTerm} />

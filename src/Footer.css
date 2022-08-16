@@ -1,7 +1,10 @@
 .footer {
+  background-color: var(--primary-color);
+  border-radius: var(--radius);
   margin-top: 15px;
   margin-bottom: 15px;
+  padding: 5px;
 }
 .footer-link {
-  color: #113f67;
+  color: var(--secondary-color);
 }

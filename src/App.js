@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="App container pt-5">
+    <div className="App container pt-1 g-2">
       <Dictionary />
       <Footer />
     </div>

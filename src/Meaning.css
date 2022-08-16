@@ -1,6 +1,9 @@
-h3::first-letter {
+.part-of-speech::first-letter {
   text-transform: uppercase;
 }
 .definition {
   margin-bottom: 8px;
+}
+.example::first-letter {
+  text-transform: uppercase;
 }
