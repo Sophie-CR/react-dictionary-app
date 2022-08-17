@@ -8,13 +8,13 @@ export default function Photos(props) {
       <div className="row">
         {props.data.map(function (photo, index) {
           return (
-            <div className="col-4">
+            <div className="col-sm-4">
               <a href={photo.url} target="_blank" rel="noreferrer">
                 <img
                   src={photo.src.landscape}
                   alt={photo.alt}
                   key={index}
-                  className="img-fluid"
+                  className="img-fluid pexels-image"
                 />
               </a>
             </div>

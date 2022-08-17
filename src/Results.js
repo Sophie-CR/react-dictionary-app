@@ -11,7 +11,7 @@ export default function Results(props) {
           <h2 className="result-word">{props.data.word}</h2>
           {props.data.phonetics.map(function (phonetic, index) {
             return (
-              <div key={index} className="phonetics-div">
+              <div key={index} className="d-flex">
                 <Phonetics data={phonetic} />
               </div>
             );

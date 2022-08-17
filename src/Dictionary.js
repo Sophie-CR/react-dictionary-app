@@ -33,13 +33,17 @@ export default function Dictionary() {
         <h1>What would you like to look up?</h1>
         <form onSubmit={search}>
           <input
-            className="me-2"
+            className="search-field"
             type="search"
             autoFocus={true}
             placeholder="Enter a word to search"
             onChange={handleSearchTerm}
           />
-          <input className="mb-1 btn button" type="submit" value="🔍 Search" />
+          <input
+            className="mb-1 btn button search-button"
+            type="submit"
+            value="🔍 Search"
+          />
         </form>
       </section>
       <Results data={results} />
