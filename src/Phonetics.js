@@ -5,9 +5,10 @@ import ReactAudioPlayer from "react-audio-player";
 export default function Phonetics(props) {
   if (props.data.audio) {
     return (
-      <div>
+      <div className="phonetics mt-3 mb-1">
         <div>
           <ReactAudioPlayer
+            className="audio-player"
             src={props.data.audio}
             autoPlay={false}
             controls={true}

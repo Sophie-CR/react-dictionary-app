@@ -4,6 +4,10 @@
 .definition {
   margin-bottom: 8px;
 }
+.example {
+  font-size: 12pt;
+  opacity: 0.9;
+}
 .example::first-letter {
   text-transform: uppercase;
 }

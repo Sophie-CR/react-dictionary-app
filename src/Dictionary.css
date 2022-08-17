@@ -1,8 +1,20 @@
-.dictionary {
-  background-color: var(--primary-color);
-  border-radius: var(--radius);
-  padding: 10px;
+h1 {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 form {
   margin-bottom: 30px;
+  max-width: 90%;
+}
+input {
+  background-color: var(--light-color);
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  color: var(--tertiary-color);
+  padding: 8px 8px;
+}
+@media (max-width: 576px) {
+  .button {
+    margin-top: 2px;
+  }
 }

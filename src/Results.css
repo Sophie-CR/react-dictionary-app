@@ -1,3 +1,6 @@
 .result-word::first-letter {
   text-transform: uppercase;
 }
+.phonetics-div {
+  max-width: 80%;
+}

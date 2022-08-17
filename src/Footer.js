@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <section className="footer">
       <div>
         <a
           href="https://github.com/Sophie-CR/react-dictionary-app"
@@ -28,6 +28,6 @@ export default function Footer() {
         </a>{" "}
         to view my portfolio
       </div>
-    </div>
+    </section>
   );
 }
