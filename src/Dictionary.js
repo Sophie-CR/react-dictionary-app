@@ -12,9 +12,19 @@ export default function Dictionary() {
   function handleSearchTerm(event) {
     setSearchTerm(event.target.value);
   }
-  function search(event) {
+  function searchDefinitions(event) {
     event.preventDefault();
     axios.get(apiUrl).then(handleDictionaryResponse);
+  }
+  function handleDictionaryResponse(response) {
+    if (response.data) {
+      setResults(response.data[0]);
+      searchImages();
+    } else {
+      alert(
+        "Sorry, that word is not recognised. Please check the spelling and try again."
+      );
+    }
   }
   function searchImages() {
     const pexelsApiKey =
@@ -22,16 +32,6 @@ export default function Dictionary() {
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchTerm}&per_page=6`;
     axios.get(pexelsApiUrl, { headers }).then(handlePexelsResponse);
-  }
-  function handleDictionaryResponse(response) {
-    if (response.data) {
-      setResults(response.data[0]);
-      searchImages();
-    } else {
-      return alert(
-        "Sorry, that word is not recognised. Please check the spelling and try again."
-      );
-    }
   }
   function handlePexelsResponse(response) {
     if (response.data) {
@@ -44,7 +44,7 @@ export default function Dictionary() {
     <div className="dictionary mb-3">
       <section>
         <h1>What would you like to look up?</h1>
-        <form onSubmit={search}>
+        <form onSubmit={searchDefinitions}>
           <input
             className="search-field"
             type="search"

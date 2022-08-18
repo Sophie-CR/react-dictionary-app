@@ -14,7 +14,9 @@ form {
   margin-right: 7px;
   padding: 8px 12px;
 }
-
+.search-button {
+  padding: 6px 18px 6px 10px;
+}
 @media (max-width: 576px) {
   .search-field {
     font-size: 11pt;

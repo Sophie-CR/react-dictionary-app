@@ -16,6 +16,11 @@ export default function Results(props) {
               </div>
             );
           })}
+          <div className="button-container">
+            <a href="./#images" className="button images-link">
+              Jump to images of <em>{props.data.word}</em>
+            </a>
+          </div>
         </section>
         <div>
           {props.data.meanings.map(function (meaning, index) {

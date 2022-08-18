@@ -48,7 +48,6 @@ a:hover {
   background-color: var(--secondary-color);
   border-radius: var(--radius);
   color: var(--light-color);
-  padding: 6px 18px 6px 10px;
 }
 .button:hover {
   background-color: var(--tertiary-color);
