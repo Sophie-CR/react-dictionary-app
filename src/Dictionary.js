@@ -15,6 +15,8 @@ export default function Dictionary() {
   function search(event) {
     event.preventDefault();
     axios.get(apiUrl).then(handleDictionaryResponse);
+  }
+  function searchImages() {
     const pexelsApiKey =
       "563492ad6f917000010000014473ccdcb0a04c2b8fd9d0a62da00e8c";
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
@@ -22,10 +24,21 @@ export default function Dictionary() {
     axios.get(pexelsApiUrl, { headers }).then(handlePexelsResponse);
   }
   function handleDictionaryResponse(response) {
-    setResults(response.data[0]);
+    if (response.data) {
+      setResults(response.data[0]);
+      searchImages();
+    } else {
+      return alert(
+        "Sorry, that word is not recognised. Please check the spelling and try again."
+      );
+    }
   }
   function handlePexelsResponse(response) {
-    setPhotos(response.data.photos);
+    if (response.data) {
+      setPhotos(response.data.photos);
+    } else {
+      return null;
+    }
   }
   return (
     <div className="dictionary mb-3">

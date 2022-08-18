@@ -59,6 +59,15 @@ a:hover {
   background-color: var(--secondary-color);
   color: var(--light-color);
 }
+.sr-logo {
+  border-radius: 100px;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 12px;
+  max-width: 100%;
+  width: 350px;
+}
 @media (min-width: 768px) {
   .App {
     padding-left: 10%;
