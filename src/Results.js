@@ -18,7 +18,8 @@ export default function Results(props) {
           })}
           <div className="button-container">
             <a href="./#images" className="button images-link">
-              Jump to images of <em>{props.data.word}</em>
+              <i className="fa-solid fa-angles-down"></i> Jump to images of{" "}
+              <em>{props.data.word}</em>
             </a>
           </div>
         </section>

@@ -5,7 +5,7 @@ import Results from "./Results";
 import Photos from "./Photos";
 
 export default function Dictionary() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(null);
   const [results, setResults] = useState(null);
   const [photos, setPhotos] = useState(null);
   let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`;
@@ -14,17 +14,16 @@ export default function Dictionary() {
   }
   function searchDefinitions(event) {
     event.preventDefault();
-    axios.get(apiUrl).then(handleDictionaryResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse).catch(errorFunction);
+  }
+  function errorFunction() {
+    alert(
+      "Sorry, that word is not recognised. Please check the spelling and try again."
+    );
   }
   function handleDictionaryResponse(response) {
-    if (response.data) {
-      setResults(response.data[0]);
-      searchImages();
-    } else {
-      alert(
-        "Sorry, that word is not recognised. Please check the spelling and try again."
-      );
-    }
+    setResults(response.data[0]);
+    searchImages();
   }
   function searchImages() {
     const pexelsApiKey =
@@ -34,11 +33,7 @@ export default function Dictionary() {
     axios.get(pexelsApiUrl, { headers }).then(handlePexelsResponse);
   }
   function handlePexelsResponse(response) {
-    if (response.data) {
-      setPhotos(response.data.photos);
-    } else {
-      return null;
-    }
+    setPhotos(response.data.photos);
   }
   return (
     <div className="dictionary mb-3">
@@ -52,11 +47,9 @@ export default function Dictionary() {
             placeholder="Enter a word to search"
             onChange={handleSearchTerm}
           />
-          <input
-            className="mb-1 btn button search-button"
-            type="submit"
-            value="🔍 Search"
-          />
+          <button className="mb-1 btn button search-button" type="submit">
+            <i className="fa-solid fa-magnifying-glass"></i> Search
+          </button>
         </form>
       </section>
       <Results data={results} />
